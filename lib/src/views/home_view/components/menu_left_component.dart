@@ -29,6 +29,12 @@ class _MenuLeftComponentState extends State<MenuLeftComponent> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SizedBox(height: 85,),
+          Image.asset(
+            AppConsts.imgLogo
+          ),
+
+          const Spacer(),
           MenuItemComponent(
             icon: CupertinoIcons.home, 
             isSelected: index == 0,
@@ -57,7 +63,9 @@ class _MenuLeftComponentState extends State<MenuLeftComponent> {
             icon: Icons.exit_to_app_rounded, 
             isSelected: index == 3,
             onTap: () => setState(() => index = 3),
-          )
+          ),
+
+          const Spacer()
 
         ]
       ),

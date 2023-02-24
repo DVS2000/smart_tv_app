@@ -52,6 +52,8 @@ class _DescriptionFilmViewState extends State<DescriptionFilmView> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
+
+                                    const SizedBox(height: 50,),
                                     
                                     Text(
                                       widget.film.title,
@@ -79,7 +81,9 @@ class _DescriptionFilmViewState extends State<DescriptionFilmView> {
                                     title: "Voltar",
                                     showIcon: false,
                                     onTap: () => Navigator.pop(context),
-                                  )
+                                  ),
+
+                                  const SizedBox(height: 50,),
                                     
                                     
                                   ],
