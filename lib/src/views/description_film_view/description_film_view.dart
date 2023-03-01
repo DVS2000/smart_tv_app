@@ -26,90 +26,78 @@ class _DescriptionFilmViewState extends State<DescriptionFilmView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: context.sizedDevice.height,
-        width: context.sizedDevice.width,
-        child: Expanded(
-          child: Stack(
-            children: [
-              BackgroundComponentn(urlImg: widget.film.urlTrailerGif,),
-              Expanded(
-                child: Center(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.only(
-                      left: context.sizedDevice.width / 10
-                    ),
-                    child: Center(
+      body: Stack(
+        children: [
+          BackgroundComponentn(urlImg: widget.film.urlTrailerGif,),
+          SizedBox(
+            height: context.sizedDevice.height,
+            width: context.sizedDevice.width,
+            child: Center(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  left: context.sizedDevice.width / 10
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
 
-                                    const SizedBox(height: 50,),
-                                    
-                                    Text(
-                                      widget.film.title,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: context.sizedDevice.width / 25,
-                                        fontFamily: AppConsts.fontMain
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: context.sizedDevice.height / 30,
-                                    ),
-                                    Text(
-                                      widget.film.description,
-                                      textAlign: TextAlign.justify,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: AppConsts.fontPublicSans
-                                      ),
-                                    ),
+                          const SizedBox(height: 50,),
+                          
+                          Text(
+                            widget.film.title,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: context.sizedDevice.width / 25,
+                              fontFamily: AppConsts.fontMain
+                            ),
+                          ),
+                          SizedBox(
+                            height: context.sizedDevice.height / 30,
+                          ),
+                          Text(
+                            widget.film.description,
+                            textAlign: TextAlign.justify,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontFamily: AppConsts.fontPublicSans
+                            ),
+                          ),
 
-                                    const SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
 
-                                  CustomButtonComponent(
-                                    title: "Voltar",
-                                    showIcon: false,
-                                    onTap: () => Navigator.pop(context),
-                                  ),
+                        CustomButtonComponent(
+                          title: "Voltar",
+                          showIcon: false,
+                          onTap: () => Navigator.pop(context),
+                        ),
 
-                                  const SizedBox(height: 50,),
-                                    
-                                    
-                                  ],
-                                ),
-                              ),
-                              
-                              Expanded(
-                                child: Center(
-                                  child: Icon(
-                                    CupertinoIcons.play_circle,
-                                    color: Colors.white,
-                                    size: context.sizedDevice.width / 5,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),           
+                        const SizedBox(height: 50,),
+                          
+                          
                         ],
                       ),
                     ),
-                  ),
+                    
+                    Expanded(
+                      child: Center(
+                        child: Icon(
+                          CupertinoIcons.play_circle,
+                          color: Colors.white,
+                          size: context.sizedDevice.width / 5,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          ),
-        ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
